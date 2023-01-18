@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--
+ @license
+ Copyright 2019 Google LLC. All Rights Reserved.
+ SPDX-License-Identifier: Apache-2.0
+-->
+<!-- [START maps_add_map] -->
+<html>
+  <head>
+    <title>Add Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <!-- <script type="module" src="./index.js"></script> -->
+  </head>
+  <body>
+    
+    <h3>My Google Maps Demo</h3>
+    
+    <div id="map"></div>
+        
+    <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzdG-c8tSpFy6-s4DBlbFd-tVZBvE2wGc&callback=initMap&v=weekly"
+    defer
+    ></script>
+    <script>
+    
+    function initMap() {
+      // The location of Uluru
+      const newyork = { lat: 40.730610, lng: -73.935242 };
+      // The map, centered at Uluru
+      const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 18,
+        center: newyork,
+      });
+      // The marker, positioned at Uluru
+      const marker = new google.maps.Marker({
+        position: newyork,
+        map: map,
+      });
+    }
+    
+    window.initMap = initMap;
+    
+    </script>
+  </body>
+</html>
+<!-- [END maps_add_map] -->
